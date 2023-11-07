@@ -131,7 +131,7 @@ async function functionCall({
     }
   };
 
-  const ai = getAIApi(user.openaiAccount, 480000);
+  const ai = getAIApi({ ...user.openaiAccount, model: extractModel.model }, 48000);
 
   const response = await ai.chat.completions.create({
     model: extractModel.model,
@@ -180,7 +180,7 @@ Human: ${content}`
     }
   ];
 
-  const ai = getAIApi(user.openaiAccount, 480000);
+  const ai = getAIApi({ ...user.openaiAccount, model: extractModel.model }, 48000);
 
   const data = await ai.chat.completions.create({
     model: extractModel.model,

@@ -69,7 +69,7 @@ export async function generateQA(): Promise<any> {
             })
       }
     ];
-    const ai = getAIApi(undefined, 480000);
+    const ai = getAIApi({ model: global.qaModels[0].model }, 480000);
     const chatResponse = await ai.chat.completions.create({
       model: global.qaModels[0].model,
       temperature: 0.01,

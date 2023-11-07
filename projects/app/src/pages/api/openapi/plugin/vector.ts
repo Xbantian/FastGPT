@@ -57,7 +57,7 @@ export async function getVector({
     }
 
     // 获取 chatAPI
-    const ai = getAIApi();
+    const ai = getAIApi({ model });
 
     // 把输入的内容转成向量
     const result = await ai.embeddings

@@ -113,7 +113,7 @@ ${systemPrompt}
       }
     }
   };
-  const ai = getAIApi(user.openaiAccount, 48000);
+  const ai = getAIApi({ ...user.openaiAccount, model: cqModel.model }, 48000);
 
   const response = await ai.chat.completions.create({
     model: cqModel.model,
@@ -157,7 +157,7 @@ Human:${userChatInput}`
     }
   ];
 
-  const ai = getAIApi(user.openaiAccount, 480000);
+  const ai = getAIApi({ ...user.openaiAccount, model: cqModel.model }, 48000);
 
   const data = await ai.chat.completions.create({
     model: cqModel.model,
